@@ -12,14 +12,14 @@ x <- numeric()
 options(scipen=999)
 
 for (i in years){
-        x <- c(x, sum(NEI$Emissions[NEI$year == i]))
+        x <- c(x, sum(NEI[NEI$year == i,]$Emissions))
 }
 
 
 png("plot1.png")
 
-plot(as.character(x), years, type = "l", 
-     main = expression("Total PM"[2.5]*" Emissions by Year"), ylab = "Year", 
-     xlab = expression("PM"[2.5]*" Emissions in Tons"))
+plot(years, x, type = "l", 
+     main = expression("Total PM"[2.5]*" Emissions by Year"), xlab = "Year", 
+     ylab = expression("PM"[2.5]*" Emissions in Tons"))
 
 dev.off()
