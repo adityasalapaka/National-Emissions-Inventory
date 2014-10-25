@@ -7,6 +7,8 @@ SCC <- SCC[with(SCC, order(SCC)),]
 # Across the United States, how have emissions from coal combustion-related 
 # sources changed from 1999-2008?
 
+library("ggplot2")
+
 sources <- SCC[grep("Coal", SCC$Short.Name),]$SCC
 
 data <- NEI[NEI$SCC == sources,]
