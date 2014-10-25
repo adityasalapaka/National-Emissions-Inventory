@@ -16,7 +16,7 @@ png("plot3.png", width = 960)
 g <-  ggplot(t, aes(year, Emissions, color = type))
 
 p <- g + geom_point() + facet_grid(. ~ type) + geom_smooth(method = "lm") + 
-        labs(title = expression("Total PM"[2.5]*" Emissions by Year and Type for Baltimore")) + 
+        labs(title = expression("PM"[2.5]*" Emissions for Baltimore")) + 
         labs(x = "Year", y = expression("PM"[2.5]*" Emissions in Tons")) + 
         coord_cartesian(ylim = c(0,200))
 
