@@ -11,6 +11,9 @@ citylabeller <- function(variable, value){
         return(citynames[value])
 }
 
+# As motor vehicles from the questions wasn't clear, I used the on-road and
+# off-road types from the data.
+
 t <- NEI[((NEI$fips == "24510" | NEI$fips == "06037") & 
                   (NEI$type == "ON-ROAD" | NEI$type == "OFF-ROAD")),]
 

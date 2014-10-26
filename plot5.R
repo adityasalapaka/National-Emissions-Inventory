@@ -6,6 +6,9 @@ SCC <- readRDS("Source_Classification_Code.rds")
 
 library("ggplot2")
 
+# As motor vehicles from the questions wasn't clear, I used the on-road and
+# off-road types from the data.
+
 t <- NEI[(NEI$fips == "24510" & 
                   (NEI$type == "ON-ROAD" | NEI$type == "OFF-ROAD")),]
 

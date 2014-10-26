@@ -7,16 +7,15 @@ SCC <- readRDS("Source_Classification_Code.rds")
 
 years <- c(1999, 2002, 2005, 2008)
 
-x <- numeric()
 t<-NEI[NEI$fips == "24510",]
 
 options(scipen=999)
 
-for (i in years){
-        x <- c(x, sum(t[t$year == i,]$Emissions, 
-                      na.rm = TRUE))
-}
+x <- numeric()
 
+for (i in years){
+        x <- c(x, sum(t[t$year == i,]$Emissions, na.rm = TRUE))
+}
 
 png("plot2.png")
 

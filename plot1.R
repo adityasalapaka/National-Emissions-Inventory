@@ -9,12 +9,11 @@ years <- c(1999, 2002, 2005, 2008)
 
 x <- numeric()
 
-options(scipen=999)
+options(scipen=999) # To remove scientific notations
 
 for (i in years){
         x <- c(x, sum(NEI[NEI$year == i,]$Emissions))
 }
-
 
 png("plot1.png")
 

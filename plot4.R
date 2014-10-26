@@ -14,9 +14,9 @@ sources <- SCC[grep("Coal", SCC$Short.Name),]$SCC
 data <- NEI[NEI$SCC == sources,]
 data <- data[with(data, order(SCC)),]
 
-g <- ggplot(data, aes(year, Emissions))
-
 png("plot4.png")
+
+g <- ggplot(data, aes(year, Emissions))
 
 p <- g + geom_point() + geom_smooth(method = "lm") + 
         labs(title = expression("PM"[2.5]*" Emissions from Coal for United States")) + 
